@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+   <h1>LOGIN PANEL</h1>
+   <!-- Login Form -->
+   <div class="form"> 
+      <form >
+         <div class="imgcontainer">
+            <img src="img/Login.jfif" alt="Login Avatar" class="avatar">
+         </div>
+         <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" id="uname" name="uname"/>
+            <label for="password"><b>Password</b></label>
+            <input type='password'placeholder="Enter Your Password" name="password" id='password'/>
+            <input type='checkbox' id='toggle' onchange='togglePassword(this)'><span id='toggleText'>Show</span>
+            <span class="buttons">
+               <button type="submit" value="Reset" onclick="clearFunc()" class="btn">Reset</button>
+               <button type="submit" value="Login" class="btn" onClick="login()">Login</button>
+            </span>
+         </div>
+      </form>
+   </div> 
+
+   <!-- center vertical line  -->
+   <div class="v1"></div>
+   <!-- Company Name/Website name  -->
+   <img src="img/BG1.png" alt="website name" class="logo">
+   
+   <script type="text/javascript">
+      function togglePassword(el){
+         var checked = el.checked;
+         if (checked) {
+            document.getElementById("password").type = 'text';
+            document.getElementById("toggleText").textContent= "Hide";
+         } else {
+            document.getElementById("password").type = 'password';
+            document.getElementById("toggleText").textContent= "Show";
+         }
+      }
+
+      function login()
+      {
+         var uname = document.getElementById("uname").value;
+         var password = document.getElementById("password").value;
+         if(uname === '')
+         {
+            alert("Please enter the user name.");
+         }
+         else if(password === '')
+         {
+            alert("Enter the password");
+         }
+         else
+         {
+            alert('Login Successful. Thank You!');
+         }
+      }
+
+      function clearFunc()
+      {
+         document.getElementById("uname").value="";
+         document.getElementById("password").value="";
+      }  
+   </script>     
+</body>
+</html>
